@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--    import javascript code from logic.js-->
+    <script src="logic.js"></script>
+</head>
+<body>
+<div class="header">
+    <img src="pfp.jpeg"/>
+    <div class="leftAligned">
+        <h1>Noureddin Bakir</h1>
+        <h2>Software Engineer</h2>
+    </div>
+</div>
+<h2>Hi, I'm Noureddin Bakir, a Software Enginer Focused on...</h2>
+<ul>
+    <li>
+        <h3>Distributed Systems</h3>
+    </li>
+    <li>
+        <h3>Full Stack Development</h3>
+    </li>
+    <li>
+        <h3>Helping others</h3>
+    </li>
+</ul>
+<!--space divider-->
+<div class="divider"></div>
+<h1>Experience</h1>
+<div class="resume">
+    <div>
+        <div class="spaceBetween resumeBody">
+            <h3>Backend Engineer</h3>
+            <h4>Feb 2023 - Apr 2023</h4>
+        </div>
+        <div class="spaceBetween resumeBody">
+            <h4>Cadent.tv</h4>
+            <h4>San Jose, CA</h4>
+        </div>
+        <p>
+            Cadent.tv is a startup that is building a platform for content creators to monetize their content.
+            I worked on the backend of the platform, building out the infrastructure for the platform to scale.
+            I also worked on the frontend of the platform, building out the user interface for the platform.
+        </p>
+    </div>
+    <div>
+        <div class="spaceBetween resumeBody">
+            <h3>Software Engineer</h3>
+            <h4>May 2023 - Sep 2023</h4>
+        </div>
+        <div class="spaceBetween resumeBody">
+            <h4>NetApp</h4>
+            <h4>San Jose, CA</h4>
+        </div>
+        <p>
+            Cadent.tv is a startup that is building a platform for content creators to monetize their content.
+            I worked on the backend of the platform, building out the infrastructure for the platform to scale.
+            I also worked on the frontend of the platform, building out the user interface for the platform.
+        </p>
+    </div>
+</div>
+<h1>Education</h1>
+<div class="resume">
+    <div>
+        <div class="spaceBetween resumeBody">
+            <h3>Bachelors</h3>
+            <h4>Aug 2019 - Dec 2023</h4>
+        </div>
+        <div class="spaceBetween resumeBody">
+            <h4>San Jose State University</h4>
+            <h4>San Jose, CA</h4>
+        </div>
+        <p>
+            Cadent.tv is a startup that is building a platform for content creators to monetize their content.
+            I worked on the backend of the platform, building out the infrastructure for the platform to scale.
+            I also worked on the frontend of the platform, building out the user interface for the platform.
+        </p>
+    </div>
+    <div class="centerButton">
+        <button class="goBackButton" onclick="window.location.href='Transcript.html'">
+            <h3 id="buttonText">View Transcript</h3>
+        </button>
+        <p>*Passowrd Protected*</p>
+    </div>
+</div>
+<h1>Projects</h1>
+<div class="resume">
+    <!--    Dropdown showing two options like an accordian with button to open prj1.html and prj2.html-->
+    <button class="accordion">Financial Tracker</button>
+    <div class="panel">
+        <button
+                onclick="window.location.href='prj2.html'">
+            Go to Financial Tracker
+        </button>
+    </div>
+
+    <button class="accordion">Doctor Scheduler</button>
+    <div class="panel">
+        <button onclick="window.location.href='prj1.html'">
+            Go to Doctor Scheduler
+        </button>
+    </div>
+</div>
+</body>
+</html>
