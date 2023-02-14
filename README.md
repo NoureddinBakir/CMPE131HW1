@@ -1,10 +1,10 @@
-Convert the following list to HTML
-○ Built React web application to track financial spending
-○ Transaction table updates live, and each transaction can be updated individually
-○ This project consisted of PostgreSQL backend, GraphQL API, Apollo Server, and used Websockets
+# Homework 1, Resume Website
+## Author: Noureddin Bakir
+### Stack: HTML, CSS, Javascript
 
-<ul>
-<li>Built React web application to track financial spending</li>
-<li>Transaction table updates live, and each transaction can be updated individually</li>
-<li>This project consisted of PostgreSQL backend, GraphQL API, Apollo Server, and used Websockets</li>
-</ul>
+## How to run
+1. Open Resume.html in a browser
+2. Click on the links to navigate to the different sections of the resume
+3. Passowrd is "frankbutt" for Transcript page
+
+## Have fun!
