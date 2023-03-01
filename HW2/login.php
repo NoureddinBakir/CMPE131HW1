@@ -1,10 +1,13 @@
-<html>
-    <head>
-        <title>Processing File</title>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In Page</title>
+</head>
     <body>
-        <!-- <h1>Processing</h1> -->
-        
         <?php
             $logged_in = false;
 
@@ -13,7 +16,7 @@
                     $username = $_POST["username"];
                     $password = $_POST["password"];
 
-                    // create connection
+                    // establish connection
                     $conn = mysqli_connect("localhost", "root", "", "users");
 
                     // check connection
@@ -21,37 +24,29 @@
                         die("Connection failed: " . mysqli_connect_error());
                     }
 
-                    // get user
-                    $sql = "SELECT password FROM students WHERE username = '$username'";
-
+                    // query user existence
+                    $sql = "SELECT * FROM `users_table` WHERE `username` LIKE '$username'";
                     $results = mysqli_query($conn, $sql);
-
                     if ($results) {
                         $row = mysqli_fetch_assoc($results);
                         if ($row["password"] === $password) {
                             $logged_in = true;
                             $sql = "SELECT * FROM students";
                             $results = mysqli_query($conn, $sql);
-                            echo "<h1>Successfully logged in</h1>";
-                            echo "<br>";
-                            echo "Username: " . $username;
-                            echo "<br>";
-                            echo "Password: " . $password;
+                            echo "<h1>Success! Logged in</h1>";
                         } else {
-                            echo "<h1>Failed to log in</h1>";
+                            echo "<h1>Failed! Not log in</h1>";
                             echo "Password incorrect or user has not been registered yet";
                         }
                     } else {
                         echo mysqli_error($conn);
                     }
                     mysqli_close($conn);
-
                 } else {
-                    echo "<h1>Failed to log in</h1>";
-                    echo "Nothing was submitted or one of the fields were not filled in";
+                    echo "<h1>Failed! Not log in</h1>";
+                    echo "Error! Nothing submitted, please try again";
                 }
             }
         ?>
-        </form>
     </body>
 </html>

@@ -1,18 +1,20 @@
-<html>
-    <head>
-        <title>Processing File</title>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+</head>
     <body>
-        <!-- <h1>Processing</h1> -->
-        
         <?php
             if (isset($_POST["username"]) && (isset($_POST["password"]))) {
                 if ($_POST["username"] && $_POST["password"]) {
-                    
                     $username = $_POST["username"];
                     $password = $_POST["password"];
 
-                    // create connection
+                    // establish connection
                     $conn = mysqli_connect("localhost", "root", "", "users");
 
                     // check connection
@@ -21,19 +23,26 @@
                     }
 
                     // register user
-                    $sql = "INSERT INTO students (username, password) VALUES ('$username', '$password')";
+                    $sql = "SELECT * FROM `users_table` WHERE `username` LIKE '$username'";
                     $results = mysqli_query($conn, $sql);
 
-                    if ($results) {
+                    if (mysqli_num_rows($result1) > 0) {
+                            echo "<h1>This username is taken already!</h1>";
+                            echo "<br>";
+                            echo "<a href='../registration.html'>Please try again.</a>";
+                  } else {
+                        $sql = "INSERT INTO `users_table` (`username`, `password`) VALUES ('$username', '$password')";
+                        $results = mysqli_query($conn, $sql);
+                        if (!$results) {
+                            die("Query failed: " . mysqli_error($conn));
+                        }else {
                         echo "<h1>Success</h1>";
                         echo "The user has been added.";
                         echo "<br>";
                         echo "Username: " .$username;
                         echo "<br>";
                         echo "Password: " .$password;
-                    } else {
-                        echo "<h1>Failed</h1>";
-                        echo mysqli_error($conn);
+                        }
                     }
 
                     // close connection
@@ -48,6 +57,5 @@
                 echo "Form was not submitted";
             }
         ?>
-        </form>
     </body>
 </html>
